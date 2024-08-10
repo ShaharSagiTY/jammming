@@ -1,0 +1,26 @@
+.li {
+    list-style: none;
+}
+.li p {
+    display: inline-block;
+    width: 87%;
+    margin: 0;
+}
+.song {
+    font-weight: 700;
+}
+.album {
+    font-size: 90%;
+    font-style: italic;
+}
+.li hr {
+    width: 83%;
+    margin-left: 0;
+}
+.li button {
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border-radius: 100%;
+    /* margin-right: 10px; */
+}
