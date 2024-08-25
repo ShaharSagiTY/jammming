@@ -1,7 +1,7 @@
 import TrackList from "./TrackList/TrackList";
 import { useState } from "react";
 
-function Playlist({listName,setListName,trackList,setTrackList}) {
+function Playlist({listName,setListName,customList,setCustomList}) {
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -11,13 +11,13 @@ function Playlist({listName,setListName,trackList,setTrackList}) {
     <div className="centerBlocks">
         <h2>My new playlist:</h2>
         <form onSubmit={handleSubmit}>
-            <label for="listName">List name: </label>
+            <label htmlFor="listName">List name: </label>
             <input type="text" id="listName" value={listName} onChange={(e)=> setListName(e.target.value)}/>
             <input type="submit" value="Save To Spotify"></input>
         </form>
         <ul>
-            {trackList.map((track,i) => (
-                <TrackList trackInfo={track} setTrackList={setTrackList} i={i} />
+            {customList.map((track,i) => (
+                <TrackList trackInfo={track} setCustomList={setCustomList} i={i} />
             ))}
         </ul>
     </div>
