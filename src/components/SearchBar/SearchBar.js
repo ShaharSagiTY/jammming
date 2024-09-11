@@ -1,20 +1,13 @@
 import React, {useState} from "react";
 import styles from './SearchBar.module.css';
-import { Spotify } from "../../utilities/utilities";
+import Spotify from "../../utilities/Spotify";
 
 function SearchBar({setResultsList}){
     const [userSearch, setUserSearch] = useState("");
     async function handleSubmit(e){
         e.preventDefault();
-        const resultsArray = await Spotify.searchTrack(userSearch);
-        setResultsList(resultsArray.tracks.items.map((track) => (
-            {
-                 name: track.name,
-                 album: track.album.name,
-                 artist: track.artists[0].name,
-                 id: track.id,
-                 uri: track.uri
-        })))
+        const resultsArray = await Spotify.search(userSearch);
+        setResultsList(resultsArray)
     }
     return (
         <div className={styles.div}>

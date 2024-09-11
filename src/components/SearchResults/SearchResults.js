@@ -7,7 +7,7 @@ function SearchResults({resultsList,setCustomList}){
             <h2>Search results</h2>
             <ul>
                 {resultsList.map((track,i) => (
-                    <Track trackInfo={track} setCustomList={setCustomList} i={i} />
+                    <Track trackInfo={track} setCustomList={setCustomList} key_i={i} />
                 ))}
             </ul>
         </div>

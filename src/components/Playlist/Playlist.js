@@ -1,11 +1,13 @@
-import TrackList from "./TrackList/TrackList";
-import { useState } from "react";
+import TrackList from "../TrackList/TrackList";
+import Spotify from "../../utilities/Spotify";
 
 function Playlist({listName,setListName,customList,setCustomList}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        alert('sent!');
+        const trackUris = customList.map(track => track.uri);
+        console.log(trackUris);
+        Spotify.savePlaylist(listName,trackUris);
     };
     return (
     <div className="centerBlocks">
