@@ -6,6 +6,8 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import Playlist from "./components/Playlist/Playlist";
 import Spotify from './utilities/Spotify';
 
+//comment CHK 14-9-24
+
 function App() {
   // const [userID, setUserID] = useState("");
   const [listName, setListName] = useState("");
@@ -13,14 +15,10 @@ function App() {
   const [customList, setCustomList] = useState([]);
 
   console.log( Spotify.getAccessToken())
-  // console.log("userID1: ", userID);
-  // Spotify.getUserId(userID, setUserID);
-  // console.log("userID2: ", userID);
 
   return (
     <main>
       <h1>Jammming</h1>
-      <button onClick={()=>console.log(customList)}>CHK list uris</button>
       <SearchBar
         setResultsList={setResultsList}
       />
